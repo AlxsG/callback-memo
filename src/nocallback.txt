@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import ReactDOM from "react-dom";
 import Todos from "./Todos";
 
@@ -9,17 +9,17 @@ const App = () => {
   const increment = () => {
     setCount((c) => c + 1);
   };
-  const addTodo = useCallback(() => {
-    setTodos((t) => [...t, "Carga"]);
-  }, [todos]);
+  const addTodo = () => {
+    setTodos((t) => [...t, "New Todo"]);
+  };
 
   return (
     <>
       <Todos todos={todos} addTodo={addTodo} />
       <hr />
       <div>
-        Contador: {count}
-        <button onClick={increment}>Agregar</button>
+        Count: {count}
+        <button onClick={increment}>+</button>
       </div>
     </>
   );
